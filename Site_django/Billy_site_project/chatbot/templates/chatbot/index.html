@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <!--PAGE INFO-->
+        <title>Placeholder</title>
+        <meta name="keywords" content=""/>
+        <meta name="author" content="Louis Guillemet-Senkel et Ludwig Guerin"/>
+        
+        <!--IMPORTANT META-->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no, initial-scale=1.0, minimal-scale=1.0, maximal-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+        
+        
+        <!--STYLESHEETS-->
+        <link rel="stylesheet" href="{% static 'chatbot/css/reset.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/font-load.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/clear_float.css' %}"/>
+        
+        
+        <link rel="stylesheet" href="{% static 'chatbot/css/hamburger.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/jqUI/jquery-ui.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/jqUI/jquery-ui.structure.css' %}"/>
+        
+        
+        
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/commun.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/main.css' %}" media="all and (min-width: 768px)"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/mobile.css' %}" media="all and (max-width: 768px)"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/mobile.css' %}" media="all and (orientation: portrait)"/>
+        
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/sidemenu/main.css' %}"/>
+        
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/definitive_colors.css' %}" id="stylesheet"/>
+<!--        <link rel="stylesheet" href="/css/index/debug.css"/>-->
+
+        
+        
+        
+        
+        <!--regular scripts-->
+        <script src="{% static 'chatbot/js/jquery.js' %}"></script>
+        <script src="{% static 'chatbot/js/jquery-ui.js' %}"></script>
+        <script src ="{% static 'chatbot/js/jq-plugins/Vague.js' %}"></script>
+        
+        <!--custom scripts-->
+        <script src="{% static 'chatbot/js/extendStringPrototpye.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/test_form_validation.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/keycombo.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/hamburger_and_menu.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/message_control.js' %}"></script>
+        <script src="{% static 'chatbot/js/smooth_scroll.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/svg_to_inlineSvg.js' %}"></script>
+
+    </head>
+    <body>
+        <!--SIDEMENU-->
+        <div id="sidemenu">
+            <div class="abs2rel">
+                <div id="themePick">
+                    <!--THEME MENU-->
+                    <select id="themeMenu" name="themeMenu">
+                        <option value="" disabled>--pick a theme--</option>
+                        <option value="/css/index/definitive_colors.css" selected>Material SkyBlue (default)</option>
+                        <option value="/css/index/themes/flat.css">Flat SkyBlue</option>
+                        <option value="/css/index/themes/darkFlat.css">Dark Flat</option>
+                        <option value="/css/index/themes/white_the_f.css">White The F</option>
+                        <option value="/css/index/themes/flatRed.css">Flat Fire</option>
+                        <option value="/css/index/themes/whiterial.css">Whiterial</option>
+                    </select>
+                    <!--JQUERY UI SELECTMENU-->
+                    <script>
+                        $("#themeMenu").selectmenu()//create select menu
+                            .val("/css/index/definitive_colors.css")//set materialSkyBlue as default
+                            .selectmenu("refresh");//refresh for cohertion purposes
+                    </script>
+                    
+                    <p id="bot_desc">
+                        <b>How to use the bot</b><br/>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a purus sit amet diam malesuada ultricies vel posuere ligula. Mauris accumsan leo odio, sed lobortis nisl convallis eu. Ut scelerisque egestas iaculis. Nulla a eros ut metus gravida dapibus sit amet id nisi. Nulla sit amet sagittis metus. Praesent interdum sem diam, nec pretium lectus consectetur eget. Aenean malesuada erat quis dapibus finibus. In pellentesque pretium purus quis maximus.<br/>
+<br/>
+Phasellus vestibulum lorem quis elementum aliquet. Nullam vulputate ex vel justo consequat fringilla. Donec placerat tristique commodo. Integer tempor sed dolor convallis varius. Nunc id mattis sem. Donec mollis porttitor ex sed vestibulum. Nullam pharetra leo pharetra elit egestas dictum. Praesent non risus mi. Fusce efficitur non ante at mattis. Nulla placerat facilisis tortor tristique efficitur. Suspendisse consequat dignissim libero, sed convallis libero convallis quis. Sed vestibulum ante quis venenatis maximus. Duis facilisis gravida erat, eu finibus risus malesuada vel. Etiam ut pulvinar purus, maximus tempus sem.
+<br/>
+Aliquam nec facilisis purus. Donec eros lacus, suscipit id condimentum ut, porttitor vitae erat. Sed quis posuere libero. Donec ac volutpat nunc, sed tempor nisi. Suspendisse ut egestas enim, sed mattis nunc. Mauris et fringilla erat. In ullamcorper rutrum magna eu pellentesque. Sed vel feugiat lorem, vel pellentesque velit. Ut pharetra luctus euismod.<br/>
+<br/>
+Vivamus condimentum libero a blandit scelerisque. Nulla sit amet sodales enim, quis laoreet mauris. Vivamus varius ornare rutrum. Duis cursus nunc eget iaculis sodales. Vivamus vel nisl vel quam congue faucibus mattis sed odio. Duis bibendum, libero ac consectetur imperdiet, orci justo tincidunt turpis, quis varius sapien ex id nunc. Quisque et leo aliquam, consequat enim a, vestibulum nibh. Curabitur ut euismod magna. Morbi turpis quam, mattis quis tristique in, ullamcorper vitae augue. Nunc ante quam, ultrices nec nunc vel, semper sagittis nunc. Vivamus commodo lorem at porttitor ullamcorper. Duis suscipit finibus arcu sed venenatis.<br/>
+<br/>
+Curabitur faucibus suscipit cursus. Fusce posuere, risus a venenatis laoreet, purus mi ultrices nisi, id consequat odio orci in augue. Donec dignissim in tortor eu volutpat. Aenean commodo gravida tortor. Donec ut leo eget metus mollis consequat. Cras faucibus, enim eu malesuada feugiat, lectus libero vulputate diam, at lacinia metus elit quis urna. Vivamus sit amet tortor urna. Maecenas fermentum nulla nisi, at ultricies turpis mattis non. Quisque elementum, ante eu porta rutrum, lorem urna aliquam orci, aliquam malesuada sem lacus et orci.<br/> 
+                    </p>
+                </div>
+            </div>
+        </div><!--End of SideMenu-->
+        
+        
+        <!--MAIN PAGE-->
+        <div id="page" style="width: 100vw; height:100vh; position:relative;">
+            <button id="hamburger_button" class="hamburger hamburger--emphatic" type="button" style="z-index:200">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <div id="hider" style="z-index:-1; width:100vw; height:100vh; background-color:#000; opacity:0;  position:absolute; top:0; display:none; cursor:pointer" data-opa="0.4"></div>
+
+            <div id="content-holder">
+                <div id="content">
+                    <div id="chat">
+                        <ul id="message_holder">
+                            <li>msg bot 1</li>
+                        </ul>
+                    </div>
+                    <div id="form">
+                        <form id="actual_form" onsubmit="return false;">
+                            <input name="user_input" type="text" id="usr_input" style="padding:2vmin" placeholder="Type your message here" value=""/>
+                            <button name="submit_button" type="submit" id="submit_button" style="cursor: pointer"><img src="/src/img/svg/send_message.svg" alt="send msg" id="button_img"/></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!--End of Page-->
+    </body>
+</html>

@@ -1,0 +1,89 @@
+#page{
+    background:  #e9ebee;
+    color:#3c3f41;
+}/*fond de la page*/
+
+#content-holder {
+	background:rgba(50,90,160,0.05);
+}/*contour du chat*/
+
+#chat{
+    background:#e9ebee;
+}/*fond du chat*/
+
+#form, #usr_input{
+    background:#e9ebee;
+}/*fond de l'entrée de l'utilisateur*/
+
+
+#submit_button {
+	background: rgba(0,0,0,0.05);
+}/*fond du bouton de validation de formulaire*/
+
+
+/**@@SIDE MENU@@**/
+#sidemenu {
+    background:#e9ebee;
+    
+    
+    
+    color:#3c3f41;/*text color*/
+}/*fond et couleur de texte du menu latéral*/
+
+#themeMenu-button, .ui-menu-item-wrapper, .ui-menu-item-wrapper.ui-state-active{
+    background:hsl(219, 28%, 31%);
+    color:#e9ebee;
+}/*fond de l'élément actif du menu de séletion*/
+.ui-menu-item-wrapper{
+    filter:blur(0.4px);
+    background:hsl(219, 28%, 41%);
+}/*fond du "bouton" du menu de séletion*/
+.ui-menu-item-wrapper.ui-state-active, .ui-state-disabled{
+    filter:none;
+    border: none;
+    background:hsl(219, 27%, 21%);
+    
+    transition:all 0.1s ease-in-out;
+}/*transition/couleur de l'élément actif*/
+
+
+
+/**@@CHAT MSG@@**/
+ul#message_holder > li{
+    color:#e9ebee;
+}/*all*/
+
+ul#message_holder > li:nth-child(2n){
+    background:hsl(159, 28%, 51%) ;
+    
+}/*Utilisateur*/
+
+ul#message_holder > li:nth-child(2n+1){
+    background: hsl(219, 28%, 51%);
+
+}/*Bot*/
+
+
+
+
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background:hsl(219, 28%, 31%);
+}/*hamburger*/
+#usr_input {
+	color:hsl(219, 28%, 31%);
+}/*font-color in user's input*/
+
+.ui-state-disabled > #ui-id-1{
+    background:#0041ff;
+    color:#e9ebee;
+    filter:opacity(0.5);
+}/*option désactivé du menu des thèmes*/
+
+#bot_desc {
+	color:hsl(219, 28%, 31%);
+}/*couleur du texte de description de l'utilisation du bot*/
+
+svg path{
+    fill:hsl(219, 28%, 31%);
+}/*icône d'envoi du message*/

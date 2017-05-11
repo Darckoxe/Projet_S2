@@ -1,0 +1,127 @@
+#page{
+    background:linear-gradient(hsl(216, 13%, 95%) 30%,hsl(216, 13%, 92%) 70%);
+    background:-moz-linear-gradient(hsl(216, 13%, 95%) 30%,hsl(216, 13%, 92%) 70%);
+    background:-webkit-linear-gradient(hsl(216, 13%, 95%) 30%,hsl(216, 13%, 92%) 70%); 
+    color:#3c3f41;
+    
+    box-shadow: -0.2vmin 0 0.4vmin 0.2vmin rgba(0,0,0,0.35);
+}/*fond de la page*/
+
+#content-holder {
+	background:rgba(50,90,160,0.05);
+    background:linear-gradient(hsla(218, 52%, 44%, 0.05) 30%,hsla(218, 52%, 41%, 0.05) 70%);
+    background:-moz-linear-gradient(hsla(218, 52%, 44%, 0.05) 30%,hsla(218, 52%, 41%, 0.05) 70%);
+    background:-webkit-linear-gradient(hsla(218, 52%, 44%, 0.05) 30%,hsla(218, 52%, 41%, 0.05) 70%);
+    
+    box-shadow:  0 0.8vmin 0.8vmin rgba(0,0,0,0.15);
+}/*contour du chat*/
+
+#chat{
+    background:#e9ebee;
+    box-shadow: inset 0.5vmin 0 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset -0.5vmin 0 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset 0 0.5vmin 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset 0 -0.5vmin 0.4vmin rgba(0,0,0,0.08/*form_shadow*/);
+}/*fond du chat*/
+
+#form, #usr_input{
+    background:#e9ebee;
+    box-shadow: inset 0.5vmin 0 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset -0.5vmin 0 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset 0 0.5vmin 0.4vmin rgba(0,0,0,0.08/*form_shadow*/), inset 0 -0.5vmin 0.4vmin rgba(0,0,0,0.08/*form_shadow*/);
+}/*fond de l'entrée de l'utilisateur*/
+
+
+#submit_button {
+	background: rgba(0,0,0,0.05);
+    box-shadow: -0.5vmin 0 0.4vmin rgba(0,0,0,0.08/*form_shadow*/);
+}/*fond du bouton de validation de formulaire*/
+
+
+/**@@SIDE MENU@@**/
+#sidemenu {
+    background:linear-gradient(hsl(220, 12%, 95%) 30%,hsl(216, 13%, 92%) 70%);
+    background:-moz-linear-gradient(hsl(216, 13%, 95%) 30%,hsl(216, 13%, 92%) 70%);
+    background:-webkit-linear-gradient(hsl(216, 13%, 95%) 30%,hsl(216, 13%, 92%) 70%);    
+    
+    
+    color:#3c3f41;/*text color*/
+}/*fond et couleur de texte du menu latéral*/
+
+#themeMenu-button, .ui-menu-item-wrapper, .ui-menu-item-wrapper.ui-state-active{
+    background:linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    background:-moz-linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    background:-webkit-linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    color:#e9ebee;
+}/*fond de l'élément actif du menu de séletion*/
+#themeMenu-button, .ui-selectmenu-open{
+    filter:drop-shadow(0 0.8vmin 0.6vmin rgba(0,0,0,0.25));
+}/*ombre du bouton et du menu des thèmes*/
+.ui-menu-item-wrapper{
+    filter:blur(0.4px);
+    background:hsl(219, 28%, 41%);
+    background:linear-gradient(hsl(219, 28%, 44%) 30%,hsl(219, 28%, 41%) 70%);
+    background:-moz-linear-gradient(hsl(219, 28%, 44%) 30%,hsl(219, 28%, 41%) 70%);
+    background:-webkit-linear-gradient(hsl(219, 28%, 44%) 30%,hsl(219, 28%, 41%) 70%);
+}/*fond du "bouton" du menu de séletion*/
+.ui-menu-item-wrapper.ui-state-active, .ui-state-disabled{
+    filter:none;
+    border: none;
+    background:hsl(219, 27%, 21%);
+    background:linear-gradient(hsl(219, 27%, 24%) 30%,hsl(219, 27%, 21%) 70%);
+    background:-moz-linear-gradient(hsl(219, 27%, 24%) 30%,hsl(219, 27%, 21%) 70%);
+    background:-webkit-linear-gradient(hsl(219, 27%, 24%) 30%,hsl(219, 27%, 21%) 70%);
+    
+    transition:all 0.1s ease-in-out;
+}/*transition/couleur de l'élément actif*/
+
+
+
+/**@@CHAT MSG@@**/
+ul#message_holder > li{
+    filter:drop-shadow(0 0.6vmin 0.5vmin rgba(0,0,0,0.35));
+    color:#e9ebee;
+    text-shadow: 0 0.4vmin 0.6vmin rgba(0,0,0,0.35);
+}/*all*/
+
+ul#message_holder > li:nth-child(2n){
+    background:linear-gradient(hsl(159, 28%, 54%) 30%,hsl(159, 28%, 51%) 70%);
+    background:-moz-linear-gradient(hsl(159, 28%, 54%) 30%,hsl(159, 28%, 51%) 70%);
+    background:-webkit-linear-gradient(hsl(159, 28%, 54%) 30%,hsl(159, 28%, 51%) 70%);
+}/*Utilisateur*/
+
+ul#message_holder > li:nth-child(2n+1){
+    background: linear-gradient(hsl(219, 28%, 51%) 30%,hsl(219, 28%, 51%) 70%);
+    background: -moz-linear-gradient(hsl(219, 28%, 51%) 30%,hsl(219, 28%, 51%) 70%);
+    background: -webkit-linear-gradient(hsl(219, 28%, 51%) 30%,hsl(219, 28%, 51%) 70%);
+
+}/*Bot*/
+
+
+
+
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background:hsl(219, 28%, 31%);
+}/*hamburger*/
+.hamburger {
+	filter:drop-shadow(0 0.4vmin 0.2vmin rgba(0,0,0,0.2));
+}
+
+
+#usr_input {
+	color:hsl(219, 28%, 31%);
+}/*font-color in user's input*/
+
+.ui-state-disabled > #ui-id-1{
+    background:#0041ff;
+    background:linear-gradient(hsl(225, 100%, 54%) 30%,hsl(225, 100%, 50%) 70%);
+    background:-moz-linear-gradient(hsl(225, 100%, 54%) 30%,hsl(225, 100%, 50%) 70%);
+    background:-webkit-linear-gradient(hsl(225, 100%, 54%) 30%,hsl(225, 100%, 50%) 70%);
+    color:#e9ebee;
+    filter:opacity(0.5);
+}/*option désactivé du menu des thèmes*/
+
+#bot_desc {
+	color:hsl(219, 28%, 31%);
+    text-shadow: 0 0.2vmin 0.4vmin rgba(0,0,0,0.35);
+}/*couleur du texte de description de l'utilisation du bot*/
+
+svg path{
+    fill:hsl(219, 28%, 31%);
+}/*icône d'envoi du message*/

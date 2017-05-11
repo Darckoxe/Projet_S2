@@ -1,0 +1,77 @@
+/**@@GENERAL STYLES@@**/
+body{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;/*One page*/
+    z-index:2;
+}
+
+body *{
+    z-index:2;
+}
+
+#actual_form {
+	width:100%;
+    height:100%;
+    position:relative;
+}/*form holder*/
+
+
+
+.abs2rel{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+#submit_button {
+	z-index: 3;
+}
+
+
+#usr_input {
+	overflow-x: scroll;
+    overflow-y: hidden;
+    
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+/*    white-space: initial;*/
+    
+    border:none;
+    padding:0;
+    display:inline-block;
+}
+
+*{
+    font-family: raleway;
+}
+
+#button_img {
+	color:#3c3f41;
+/*    background-color: #3c3f41;*/
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color: #3c3f41;
+}/*customize hamburger button*/
+
+#page{
+    z-index: 2;
+}
+
+/**@@JQUI@@**/
+#themeMenu-button, #themeMenu-button *, .ui-selectmenu-menu, .ui-selectmenu-menu *, .ui-menu-item, .ui-menu-item *{
+    border:none;
+}
+
+
+/**@@CHAT@@**/
+#chat{
+    z-index:4;
+}
+#chat *{
+    z-index: 3;
+}
+

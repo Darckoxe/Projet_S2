@@ -1,0 +1,29 @@
+body{
+    background-color: #ff00ff;
+}
+
+#content-holder{
+    background-color: aqua;
+}
+
+/*
+#content{
+    background-color: blueviolet;
+}
+*/
+
+#chat {
+	background-color:coral;
+}
+
+#form{
+    background-color: brown;
+}
+
+#usr_input {
+	background-color: chartreuse;
+}
+
+#submit_button {
+	background-color: darkgrey;
+}

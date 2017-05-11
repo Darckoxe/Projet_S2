@@ -1,0 +1,162 @@
+
+/**@@HOLDERS@@**/
+#content-holder{
+    position:absolute;
+    width:90vw;
+    height:90vh;
+    
+    top:calc(((100vh - 90vh) / 2) + 3vmax);/*centering*/
+    left:calc((100vw - 90vw) / 2);/*centering*/
+    
+    border-radius: 4vmin;
+}/*holder for everything*/
+
+#content{
+    position:relative;
+    width:100%;
+    height:100%;
+    
+    padding:2vmin;/*padding_left = 2vmin, padding_right = 2vmin, padding_top = 2vmin, padding-bottom = 2vmin*/
+}/*converter from ABSOLUTE to RELATIVE for positionning*/
+
+#content *{
+    border-radius: 4vmin;
+}
+
+
+
+/**@@CHAT@@**/
+#chat{
+    width:calc(90vw - 4vmin);/*container width - padding_left - padding_right*/
+    height:calc((90vh * 0.8) - 4vmin);/*(container_height * 0.8) - padding_top - padding-bottom*/
+    position:relative;
+}/*holds the chat history*/
+
+/**@@USER INPUT@@**/
+#form{
+    width:calc(90vw - 4vmin);/*container width - padding_left - padding_right*/
+    height:calc(90vh - ((90vh * 0.8) - 4vmin) - 8vmin);/*container_height - chat_height - 2*padding_bottom - 2*padding_top*/
+    
+    position:absolute;
+    bottom:6vmin;/*padding_bottom + padding_top + padding_bottom*/
+    
+    border-radius: 2vmin;
+}
+
+#submit_button {
+    box-sizing: border-box;
+    display: block;
+    
+	position: absolute;
+    right:0;
+    bottom:0;
+    top:0;
+    
+    padding:0;
+    
+    border:none;
+    border-radius: 2vmin;/*container's border-radius*/
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    
+    
+    width:calc((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2);/*form's height / 2*/
+    height:calc(90vh - ((90vh * 0.8) - 4vmin) - 8vmin);/*form's height*/
+}/*submit button*/
+#submit_button  #button_img{
+    width:calc( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 );/*button width * 0.8*/
+    height:calc( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 );/*button width * 0.8*/
+    
+    margin:0;/*reset all margins*/
+    padding:0;
+    border-radius: 0;
+    
+    margin-left: calc( (((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) - ( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 )) / 2);/*(submit_button's width - button_img's width) / 2*/
+    margin-right: calc( (((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) - ( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 )) / 2);/*(submit_button's width - button_img's width) / 2*/
+    margin-top:calc( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) - ( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 )) / 2 );/*(submit_button's height - button_img's height) / 2*/
+    margin-bottom:calc( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) - ( ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2) * 0.8 )) / 2 );/*(submit_button's height - button_img's height) / 2*/
+}/*img for the button*/
+
+
+#usr_input{
+    box-sizing: border-box;
+    display: block;
+    
+    height:calc(90vh - ((90vh * 0.8) - 4vmin) - 8vmin);/*form's height*/
+    
+	position: absolute;
+    left:0;
+    bottom:0;
+    top:0;
+    
+    padding:0;
+    
+    border:none;
+    border-radius: 2vmin;/*container's border-radius*/
+    border-top-right-radius: 0;
+    border-bottom-right-radius:0;
+    
+    width:calc((90vw - 4vmin) - ((90vh - ((90vh * 0.8) - 4vmin) - 8vmin) / 2));/*form's width - submit_button's width*/
+}
+
+
+
+
+
+/**@@HAMBURGER@@**/
+.hamburger {
+	transform: scale(0.8);
+    padding:0;
+    padding:1vmin;
+}
+
+
+
+/**@@CHAT MSG@@**/
+ul#message_holder{
+    width:100%;
+    height:auto;
+    max-height: calc(100% - 4vmin);/*chat_width - paddingTop - paddingBottom*/
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    padding:2vmin;
+    
+    list-style: none;
+    
+    position:absolute;
+    bottom:2vmin;/*paddingBottom*/
+    
+    box-sizing: border-box;
+    padding-right:calc(2vmin + 2000px);/*2000px to hide scrollbar whatsoever, 2vmin because it's regular padding*/
+}
+
+ul#message_holder > li{
+    width:calc((90vw - 4vmin) - 8vmin);/*chat_width - 2*paddingLeft - 2*paddingRight*/
+    height:auto;
+    padding:2vmin;
+    
+    border-radius: 3vmin;
+    margin-bottom: 2vmin;
+    
+    line-height:20px;
+    
+    display: block;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}/*all*/
+
+ul#message_holder > li:nth-child(2n){
+    text-align: right;
+    border-bottom-right-radius: 0vmin;
+/*    border-bottom-right-radius: 0.5vmin;*/
+/*    border-top-right-radius: 0.5vmin;*/
+}/*Utilisateur*/
+
+ul#message_holder > li:nth-child(2n+1){
+    text-align: left;
+    border-bottom-left-radius: 0vmin;
+/*    border-bottom-left-radius: 0.5vmin;*/
+/*    border-top-left-radius: 0.5vmin;*/
+}/*Bot*/
