@@ -12,6 +12,7 @@ chat message : linear-gradient(hsla(a%, b%, c%, 0.5) 40%, hsla(a%, b%, c-4%, 0.5
 page and sidemenu and li(2n+1) have the same color
 
 #bot_desc has the same color as the hamburger
+#addK,#rmK has the same color as the themeMenu-button
 */
 
 
@@ -184,3 +185,12 @@ ul#message_holder > li:nth-child(2n+1){
 svg path{
     fill:#3C3F41;
 }/*icône d'envoi du message*/
+
+
+#addK,#rmK{
+    background:linear-gradient(hsl(216, 12%, 100%) 40%, hsl(216, 13%, 96%) 70%);
+    background:-moz-linear-gradient(hsl(216, 12%, 100%) 40%, hsl(216, 13%, 96%) 70%);
+    background:-webkit-linear-gradient(hsl(216, 12%, 100%) 40%, hsl(216, 13%, 96%) 70%);
+    color:#3c3f41;
+    filter:drop-shadow(0 0.8vmin 0.6vmin rgba(0,0,0,0.25));
+}/*boutons de fonctionnalités d'ajout et de retrait de connaissances*/

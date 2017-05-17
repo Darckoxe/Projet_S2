@@ -25,7 +25,7 @@ $(document).ready(function(){
 function test_form_validation($user_input){
     var actual_input = $user_input.val() || "";/*if undefined, assign empty string*/
     
-    var pattern_not_to_be_followed = /^$/ //empty string pattern for test;/*verification pattern/RegEx*/
+    var pattern_not_to_be_followed = /^\s*$/ //empty string/whitespaces only;/*verification pattern/RegEx*/
     
     /*Si suis le !pattern alors traiter, sinon ne pas traiter*/
     if(!actual_input.followsPattern( pattern_not_to_be_followed )){

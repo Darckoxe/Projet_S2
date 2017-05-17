@@ -125,3 +125,14 @@ ul#message_holder > li:nth-child(2n+1){
 svg path{
     fill:hsl(219, 28%, 31%);
 }/*icône d'envoi du message*/
+
+
+
+#addK,#rmK{
+    background:linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    background:-moz-linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    background:-webkit-linear-gradient(hsl(219, 28%, 34%) 30%, hsl(219, 28%, 31%) 70%);
+    color:#e9ebee;
+    
+    filter:drop-shadow(0 0.8vmin 0.6vmin rgba(0,0,0,0.25));
+}/*boutons de fonctionnalités d'ajout et de retrait de connaissances*/

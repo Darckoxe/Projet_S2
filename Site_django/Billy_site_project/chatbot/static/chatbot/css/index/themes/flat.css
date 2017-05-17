@@ -83,3 +83,9 @@ ul#message_holder > li:nth-child(2n+1){
 svg path{
     fill:#3C3F41;
 }/*icône d'envoi du message*/
+
+
+#addK,#rmK{
+    background:hsl(0, 0%, 88%);
+    color:#3c3f41;
+}/*boutons de fonctionnalités d'ajout et de retrait de connaissances*/

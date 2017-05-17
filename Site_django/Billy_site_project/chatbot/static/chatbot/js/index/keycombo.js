@@ -2,18 +2,31 @@ $(document).keydown(function(e){
     if(e.keyCode in keyCodeMap){
         keyCodeMap[e.keyCode] = true;
         
-        if(keyCodeMap.CtrlMajUp()){
-            alert("Ctrl + Shift + ↑");//fire above theme event
+        if(keyCodeMap.MajMinus()){
+            if(themes_initialized){
+//                console.log("shift -");
+                changeTheme(getThemeAbove());
+            }else{
+                console.error("themes not initialized");
+            }
         }
         
-        if(keyCodeMap.CtrlMajDown()){
-            alert("Ctrl + Shift + ↓");//fire below theme event
+        if(keyCodeMap.MajPlus()){
+            if(themes_initialized){
+//                console.log("shift +");
+                changeTheme(getThemeBelow());
+            }else{
+                console.error("themes not initialized");
+            }
         }
         
         if(keyCodeMap.CtrlMajAltX()){
             console.clear();
         }
     }
+//    else{
+//        alert(e.keyCode);
+//    }
 }).keyup(function(e){
     if(e.keyCode in keyCodeMap){
         keyCodeMap[e.keyCode] = false;
@@ -41,17 +54,20 @@ function setupKeyMaps(){
     
     keyMap["x"] = 88;
     
+    keyMap["+"] = 107;
+    keyMap["-"] = 109;
+    
     
     for(var str in keyMap){
         keyCodeMap[ keyMap[str] ] = false;
     }
     
     
-    keyCodeMap.CtrlMajUp = function(){
-        return this[17] && this[16] && this[38];
+    keyCodeMap.MajPlus = function(){
+        return  this[16] && this[107];
     };
-    keyCodeMap.CtrlMajDown = function(){
-        return this[17] && this[16] && this[40];
+    keyCodeMap.MajMinus = function(){
+        return  this[16] && this[109];
     };
     
     keyCodeMap.CtrlMajAltX = function(){
@@ -60,7 +76,7 @@ function setupKeyMaps(){
 }
 /*
 17 : ctrl / altgr
-16 : maj/shift
+16 : maj(shift)
 18 : alt
 20 : capslock
 9 : tab
@@ -97,4 +113,7 @@ function setupKeyMaps(){
 39 : →
 37 : ←
 0 : ²
+
++ : 107
+- : 109
 */

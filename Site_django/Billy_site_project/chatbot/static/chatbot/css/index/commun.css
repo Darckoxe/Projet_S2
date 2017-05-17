@@ -53,6 +53,7 @@ body *{
 /*    background-color: #3c3f41;*/
 }
 
+
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
     background-color: #3c3f41;
 }/*customize hamburger button*/

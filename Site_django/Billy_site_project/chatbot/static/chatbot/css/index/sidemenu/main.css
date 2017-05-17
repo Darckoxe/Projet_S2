@@ -13,21 +13,28 @@
     z-index: 1;
 }
 
+#sidemenu > div{
+    min-height: 100vh;
+    overflow: visible;
+    height:auto;
+}
+
 #sidemenu *{
 	z-index:1;
+    font-family: raleway;
 }
 
 
 
 /**@@JQUERY SELECT MENU@@**/
 #themePick{
-    position:absolute;
+/*    position:absolute;*/
     width:70vw;/* container width * 0.9 */
     height:5vmin;
-    left:calc( ((80vw - 70vw) / 2) - 1vmin);/*(container_width - self_width) / 2 - paddingLeft*/
-    top:1vmax;
+    margin-left:calc( ((80vw - 70vw) / 2) - 1vmin);/*(container_width - self_width) / 2 - paddingLeft*/
+    margin-top:1vmax;
     
-    margin-bottom: 2vmin;/*margin bottom*/
+    margin-bottom: 1vmax;/*margin bottom*/
 }
 
 #themeMenu-button{
@@ -50,6 +57,7 @@
     width:70vw;
     height:auto;
     border: none;
+    margin-bottom: calc( (5vmin - 4vmin - 1vmin) / 2 );
 }
 #themeMenu-menu > li, #themeMenu-menu > li > div{
     width:100%;
@@ -71,18 +79,59 @@
 
 /**@@BOT DESCRIPTION@@**/
 p#bot_desc{
+    display: block;
     max-width:80vw;
     height:auto;
-    position:absolute;
-    top:calc(5vmin + 1vmax + 5vmin);/*select_menu's height + select_menu's top + select_menu's height*/
+    margin-top:2vmax;
+    margin-bottom:1vmax;
+    /*position:absolute;*/
+    /*top:calc(5vmin + 1vmax + 5vmin);*/    /*select_menu's height + select_menu's top + select_menu's height*/
+    
+    /*bottom: calc( (5vmin - 4vmin - 1vmin) / 2 );*/
 }/*paragraph*/
 
 p#bot_desc > b{
     font-size: 1.6em;
     display: block;
-    margin-bottom: 0.3vmin;
     text-transform:uppercase;
     text-decoration: underline;
+    margin-bottom: 0.8vmax;
 }
+
+/**@@FUNCTIONALITIES BUTTONS@@**/
+#btns {
+	width: auto;
+    height: auto;
+    margin:0;
+    margin-bottom: 2.5vmin;
+}
+
+#addK,#rmK{
+    border:none;
     
+/*    position:absolute;*/
+    height:5vmin;
+/*    bottom:2vmin;*/
+    border-radius: 1vmin;
+    font-size: 2.5vmin;
+    cursor: pointer;
     
+    transition: all 0.35s ease-in-out;
+/*    opacity: 0.8;*/
+}
+
+
+#addK {
+	margin-left:0;
+}
+#rmK{
+    margin-right:5vmin;
+}
+
+
+
+#addK:hover, #rmK:hover {
+    transition: all 0.35s ease-in-out;
+/*    opacity: 1;*/
+    filter:invert(1) hue-rotate(-180deg);
+}

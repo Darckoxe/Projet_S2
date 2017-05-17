@@ -2,7 +2,14 @@ $(document).ready(function(){
     //binding click event to the hamburger button
     $("#hamburger_button").on("click",function(){
         var $this = $(this);
+        var toggle_options = {
+            duration:500,
+            queue:false
+        };
+        
         $this.toggleClass("is-active");
+        $("ul#message_holder").getNiceScroll().toggle(toggle_options);
+        $("#sidemenu").getNiceScroll().toggle(toggle_options);
         
         //si propriété inexistante, on initialise à faux
         if($this.prop("click_active") === undefined){
@@ -69,6 +76,7 @@ $(document).ready(function(){
     
     //binding change event to the theme chooser
     $("#themeMenu").on('selectmenuchange', function(event, uiElem){
+        $("#themeMenu").selectedIndex = uiElem.item.index;
         $("#stylesheet").attr("href", ""+uiElem.item.value);
         if($("#hamburger_button").prop("click_active") === true){
             $("#hamburger_button").click();//if menu opened then close it

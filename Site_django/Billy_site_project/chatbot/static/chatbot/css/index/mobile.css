@@ -23,6 +23,10 @@
     border-radius: 4vmin;
 }
 
+#hamburger_button {
+	transform: scale(0.7);
+}/*hamburger button*/
+
 
 
 /**@@CHAT@@**/
@@ -30,6 +34,7 @@
     width:calc(90vw - 4vmin);/*container width - padding_left - padding_right*/
     height:calc((90vh * 0.8) - 4vmin);/*(container_height * 0.8) - padding_top - padding-bottom*/
     position:relative;
+    overflow: hidden;
 }/*holds the chat history*/
 
 /**@@USER INPUT@@**/
@@ -83,6 +88,7 @@
     display: block;
     
     height:calc(90vh - ((90vh * 0.8) - 4vmin) - 8vmin);/*form's height*/
+    font-size: 1em;
     
 	position: absolute;
     left:0;
@@ -105,16 +111,16 @@
 
 /**@@HAMBURGER@@**/
 .hamburger {
-	transform: scale(0.8);
+/*	transform: scale(0.8);*/
     padding:0;
-    padding:1vmin;
+/*    padding:0.1vmin;*/
 }
 
 
 
 /**@@CHAT MSG@@**/
 ul#message_holder{
-    width:100%;
+    width:calc(90vw - 4vmin);/*chat's width*/
     height:auto;
     max-height: calc(100% - 4vmin);/*chat_width - paddingTop - paddingBottom*/
     
@@ -129,11 +135,11 @@ ul#message_holder{
     bottom:2vmin;/*paddingBottom*/
     
     box-sizing: border-box;
-    padding-right:calc(2vmin + 2000px);/*2000px to hide scrollbar whatsoever, 2vmin because it's regular padding*/
+    padding-right:2vmin;/*2000px to hide scrollbar whatsoever, 2vmin because it's regular padding*/
 }
 
 ul#message_holder > li{
-    width:calc((90vw - 4vmin) - 8vmin);/*chat_width - 2*paddingLeft - 2*paddingRight*/
+    max-width:calc((90vw - 4vmin) - 8vmin - 2vmin);/*chat_width - 2*paddingLeft - 2*paddingRight*/
     height:auto;
     padding:2vmin;
     
@@ -142,20 +148,26 @@ ul#message_holder > li{
     
     line-height:20px;
     
-    display: block;
+    display: inline-block;
+    padding:auto;
     word-wrap: break-word;
+    width: auto;
     overflow-x: hidden;
 }/*all*/
 
 ul#message_holder > li:nth-child(2n){
-    text-align: right;
+    clear:both;
+    float:right;
+/*    text-align: right;*/
     border-bottom-right-radius: 0vmin;
 /*    border-bottom-right-radius: 0.5vmin;*/
 /*    border-top-right-radius: 0.5vmin;*/
 }/*Utilisateur*/
 
 ul#message_holder > li:nth-child(2n+1){
-    text-align: left;
+    clear:both;
+    float:left;
+/*    text-align: left;*/
     border-bottom-left-radius: 0vmin;
 /*    border-bottom-left-radius: 0.5vmin;*/
 /*    border-top-left-radius: 0.5vmin;*/

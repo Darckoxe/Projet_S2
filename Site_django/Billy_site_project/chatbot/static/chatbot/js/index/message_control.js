@@ -14,7 +14,7 @@ function appendToDom(msg, $dom){
 
 
 /**Function that append a String (msg) to the Message Holder
-*@param msg being the String to append (String object or literal string)
+*@param msg being the String to append (String object or string literal)
 */
 function appendToMessageHolder(msg){
     appendToDom("<li>"+msg+"</li>", $("#message_holder"));
@@ -23,7 +23,7 @@ function appendToMessageHolder(msg){
 //////////////////////////////////////////////
 
 /**Function that gets the amount of messages currently on the page
-*@return the amount of messages currently on the page (integer)
+*@return the amount of messages currently on the page (unsigned integer)
 */
 function processMsgCount(){
     var $ul = $("#message_holder");
@@ -71,7 +71,8 @@ function displayUserInput(msg){
         appendToMessageHolder(msg);
         scrollToLastMessage();//scroll down when new message
     }else{
-        console.log("user tried to input a sentence when it was the bot's turn :x");
+//        console.log("user tried to input a sentence when it was the bot's turn :x");
+        console.error("user tried to input a sentence when it was the bot's turn :x");
     }
 }
 
@@ -86,7 +87,8 @@ function displayBotResponse(msg){
         appendToMessageHolder(msg);
         scrollToLastMessage();//scroll down when new message
     }else{
-        console.log("how the fuck did the bot try to give another message without user's input ?_?");
+//        console.log("how the fuck did the bot try to give another message without user's input ?_?");
+        console.error("how the fuck did the bot try to give another message without user's input ?_?");
     }
     
 }

@@ -10,7 +10,7 @@
         
         <!--IMPORTANT META-->
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no, initial-scale=1.0, minimal-scale=1.0, maximal-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no, initial-scale=1.0"/>
         
         
         <!--STYLESHEETS-->
@@ -30,10 +30,10 @@
         <link rel="stylesheet" href="{% static 'chatbot/css/index/mobile.css' %}" media="all and (max-width: 768px)"/>
         <link rel="stylesheet" href="{% static 'chatbot/css/index/mobile.css' %}" media="all and (orientation: portrait)"/>
         
-        <link rel="stylesheet" href="{% static 'chatbot/css/index/sidemenu/main.css' %}"/>
+        <link rel="stylesheet" href="{% static 'chatbot/css/index/sidemenu/main.css' %}" id="sidemenu_css_mobile"/>
+        <!--<link rel="stylesheet" href="/css/index/sidemenu/mobile.css" media="all and (max-width: 768px)" id="sidemenu_css_mobile"/>-->
         
         <link rel="stylesheet" href="{% static 'chatbot/css/index/definitive_colors.css' %}" id="stylesheet"/>
-<!--        <link rel="stylesheet" href="/css/index/debug.css"/>-->
 
         
         
@@ -43,15 +43,21 @@
         <script src="{% static 'chatbot/js/jquery.js' %}"></script>
         <script src="{% static 'chatbot/js/jquery-ui.js' %}"></script>
         <script src ="{% static 'chatbot/js/jq-plugins/Vague.js' %}"></script>
+        <script src="{% static 'chatbot/js/jq-plugins/jqMousewheel.js' %}"></script>
+        <script src="{% static 'chatbot/js/jq-plugins/niceScroll.js' %}"></script>
         
         <!--custom scripts-->
-        <script src="{% static 'chatbot/js/extendStringPrototpye.js' %}"></script>
+        <script src="{% static 'chatbot/js/extendStringPrototype.js' %}"></script>
         <script src="{% static 'chatbot/js/index/test_form_validation.js' %}"></script>
         <script src="{% static 'chatbot/js/index/keycombo.js' %}"></script>
         <script src="{% static 'chatbot/js/index/hamburger_and_menu.js' %}"></script>
         <script src="{% static 'chatbot/js/index/message_control.js' %}"></script>
         <script src="{% static 'chatbot/js/smooth_scroll.js' %}"></script>
         <script src="{% static 'chatbot/js/index/svg_to_inlineSvg.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/scrollbar_setup.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/getThemes.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/updateButtonPos.js' %}"></script>
+        <script src="{% static 'chatbot/js/index/initBilly.js' %}"></script>
 
     </head>
     <body>
@@ -62,12 +68,12 @@
                     <!--THEME MENU-->
                     <select id="themeMenu" name="themeMenu">
                         <option value="" disabled>--pick a theme--</option>
-                        <option value="/css/index/definitive_colors.css" selected>Material SkyBlue (default)</option>
-                        <option value="/css/index/themes/flat.css">Flat SkyBlue</option>
-                        <option value="/css/index/themes/darkFlat.css">Dark Flat</option>
-                        <option value="/css/index/themes/white_the_f.css">White The F</option>
-                        <option value="/css/index/themes/flatRed.css">Flat Fire</option>
-                        <option value="/css/index/themes/whiterial.css">Whiterial</option>
+                        <option value="{% static 'chatbot/css/index/definitive_colors.css' %}" selected>Material SkyBlue (default)</option>
+                        <option value="{% static 'chatbot/css/index/themes/flat.css' %}">Flat SkyBlue</option>
+                        <option value="{% static 'chatbot/css/index/themes/darkFlat.css' %}">Dark Flat</option>
+                        <option value="{% static 'chatbot/css/index/themes/white_the_f.css' %}">White The Flat</option>
+                        <option value="{% static 'chatbot/css/index/themes/flatRed.css' %}">Flat Fire</option>
+                        <option value="{% static 'chatbot/css/index/themes/whiterial.css' %}">Whiterial</option>
                     </select>
                     <!--JQUERY UI SELECTMENU-->
                     <script>
@@ -88,7 +94,13 @@ Vivamus condimentum libero a blandit scelerisque. Nulla sit amet sodales enim, q
 <br/>
 Curabitur faucibus suscipit cursus. Fusce posuere, risus a venenatis laoreet, purus mi ultrices nisi, id consequat odio orci in augue. Donec dignissim in tortor eu volutpat. Aenean commodo gravida tortor. Donec ut leo eget metus mollis consequat. Cras faucibus, enim eu malesuada feugiat, lectus libero vulputate diam, at lacinia metus elit quis urna. Vivamus sit amet tortor urna. Maecenas fermentum nulla nisi, at ultricies turpis mattis non. Quisque elementum, ante eu porta rutrum, lorem urna aliquam orci, aliquam malesuada sem lacus et orci.<br/> 
                     </p>
-                </div>
+                    
+                    <div id="btns">
+                        <button id="addK">Add Knowledge</button>
+                        <button id="rmK">Remove Knowledge</button>
+                    </div>
+                    
+                </div><!--theme pick-->
             </div>
         </div><!--End of SideMenu-->
         
@@ -106,13 +118,14 @@ Curabitur faucibus suscipit cursus. Fusce posuere, risus a venenatis laoreet, pu
                 <div id="content">
                     <div id="chat">
                         <ul id="message_holder">
-                            <li>msg bot 1</li>
+                            <li>Bonjour, je suis Billy, votre assistant, posez moi un question !</li>
                         </ul>
                     </div>
                     <div id="form">
                         <form id="actual_form" onsubmit="return false;">
                             <input name="user_input" type="text" id="usr_input" style="padding:2vmin" placeholder="Type your message here" value=""/>
-                            <button name="submit_button" type="submit" id="submit_button" style="cursor: pointer"><img src="/src/img/svg/send_message.svg" alt="send msg" id="button_img"/></button>
+                            <button name="submit_button" type="submit" id="submit_button" style="cursor: pointer">
+                                <img src= "{% static "chatbot/src/img/svg/send_message.svg" %}" alt="send msg" id="button_img"/></button>
                         </form>
                     </div>
                 </div>
